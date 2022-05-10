@@ -8,7 +8,7 @@ import MovieList from "./MovieList";
 function Filmai(){
 
 
-    const [users, setUsers] = useState([]);//movielist
+    const [users, setUsers] = useState([]);//movielist-filmai
     const [inputText, setInputText] = useState('');
     const [clickMove, setClickMove] = useState();//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu
     
@@ -48,7 +48,7 @@ const heandelSelect = (value) => {
 
 }
 
-//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu
+//cia apsirasom kad kai parasom filmo pradzios zodzius searche galima nutu su x uzdaryti paieskos pasirinkimus
 const clearInput = () => {
   setUsers([]);
   setInputText("");
