@@ -92,7 +92,29 @@ const clearInput = () => {
 export default Filmai;
 
 /*{clickMove && <MovieList className="MovieList" filmas={clickMove}></MovieList>}*/
+
 /*
+REACT susiinstaliuoti
+npm create-react-app r1     r1 <-failo pavadinimas
+cd r1
+npm start
+
+src folderyje App.js istrinam import logo ir visa <head>
+App.js pervadinam i App.jsx
+src sukuriam Components, img folderi ir t.t. 
+
+npm i axios
+npm start
+
+jei reik
+npm i sass    <- skirtas scss
+npm start
+*/
+
+
+/*
+
+SearchIcon ir CloseIcon ikonos
 terminale instaliuoti - https://mui.com/material-ui/getting-started/installation/
 npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
@@ -105,4 +127,25 @@ ir package.json atsiras papildomai:
 ikonu pasirinkimas -https://mui.com/material-ui/material-icons/?theme=Outlined
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+*/
+
+/*
+kaip susikelti i githuba pages
+https://www.youtube.com/watch?v=Q9n2mLqXFpU&ab_channel=PedroTech
+npm install gh-pages --save-dev
+package.jsx virsuje virs "name":"..." irasyti :
+"homepage": "http://inga-lin.github.io/mmmm",    mmmm-folderio pavadinimas
+
+po   "scripts": {
+    "start": "react-scripts start", irasyti :
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+
+  terminale :
+  git add .              jei nesigaus tai parasyti git add --all ir po to git status   
+  git commit -m "Deployed website"
+  git push
+  npm run deploy
+
+  einam i github puslapi -> settings -> pages ir jeigu matom kad branch:gh-pages vadinasi viskas gerai, kopinam nuoroda ir isimetam i Settings
 */
