@@ -189,6 +189,11 @@ a {
 #clearBtn {
   cursor: pointer;
 }
+
+.movie {
+  color: rgb(25, 0, 255);
+  background-color: #61dafb;
+}
 @media (max-width: 850px) {
   .filmuTevas{
     display: flex;

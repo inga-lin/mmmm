@@ -45,7 +45,7 @@ function Filmai(){
 //cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu
 const heandelSelect = (value) => {
   setClickMove(value)
-
+  setUsers([]); //per sita ir ? su : (" ") returne padarysim kad paspaudus ant filmo uzsidarytu filmu pasirinkimas (users.length)
 }
 
 //cia apsirasom kad kai parasom filmo pradzios zodzius searche galima nutu su x uzdaryti paieskos pasirinkimus
@@ -68,7 +68,7 @@ const clearInput = () => {
                      {users.length === 0 ? ( <SearchIcon></SearchIcon>) : (<CloseIcon id="clearBtn" onClick={clearInput} />)}
                    </div>
                 </div>
-                {users.length !== 0 && (
+                {users.length !== 0 ? (
                 <div className="dataResult">
                 {users.slice(0, 8).map((value) => {
                     return (
@@ -81,7 +81,7 @@ const clearInput = () => {
                     );
                      })}
                 </div>
-                )}
+                ) : (" ")}
                 {/*//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu*/}
                {clickMove && <MovieList className="MovieList" filmas={clickMove}></MovieList> }
             </div> 
@@ -90,6 +90,8 @@ const clearInput = () => {
 }
 
 export default Filmai;
+
+/*{clickMove.original_title}*/
 
 /*{clickMove && <MovieList className="MovieList" filmas={clickMove}></MovieList>}*/
 
