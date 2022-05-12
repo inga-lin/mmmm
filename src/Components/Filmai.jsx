@@ -10,9 +10,9 @@ function Filmai(){
 
     const [users, setUsers] = useState([]);//movielist-filmai
     const [inputText, setInputText] = useState('');
-    const [clickMove, setClickMove] = useState();//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu
-    //const [search, setSearch] = useState("");
-    const [display, setDisplay] = useState(false);
+    const [clickMove, setClickMove] = useState('');//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu//const [search, setSearch] = useState("");
+    
+    //const [display, setDisplay] = useState(false);
     
 
     useEffect(() => {
@@ -30,7 +30,6 @@ function Filmai(){
   const handeleImputChange = (e) => {
     const searchWord = e.target.value;
     setInputText(searchWord);
-    setDisplay(false);
   //console.log(setInputText);
 
     const newFilter = users.filter((value) => {
@@ -58,9 +57,10 @@ function Filmai(){
     setInputText("");
 };
 
+// {/*updateoriginal_title-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
 const updateoriginal_title = title => {
   setInputText(title);//setInputText//setSearch
-  setDisplay(false);///
+  //setDisplay(false);///
 };
 ///////
 ////
@@ -70,11 +70,12 @@ const updateoriginal_title = title => {
         <>
             <div className="search">
                 <div className="searchInputs">
+                  {/*setInputText(e.target.value);-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
                    <input type="text" style={{ color:'white'}} placeholder="              filmu paieska" value={inputText} onChange={(e) => {handeleImputChange(e); setInputText(e.target.value);}}> 
                    </input>
                    <img className="movie" style={{ width: "45px", height: "45px", color:'red' }} src={movie} alt="movie"></img>
                    <div className="searchIcon">
-                     {users.length === 0 ? ( <SearchIcon></SearchIcon>) : (<CloseIcon id="clearBtn" onClick={clearInput} />)}
+                     {users.length === 0 ? ( <SearchIcon onClick={clearInput}></SearchIcon>) : (<CloseIcon id="clearBtn" onClick={clearInput} />)}
                    </div>
                 </div>
                 {users.length !== 0 ? (
@@ -82,7 +83,7 @@ const updateoriginal_title = title => {
                 {users.slice(0, 8).map((value) => {
                     return (
                     <div className="dataItem2" >
-                    <li className="dataItem" onClick={() => {heandelSelect(value); updateoriginal_title(value.title); } } filmai={users}>
+                    <li className="dataItem" onClick={() => {heandelSelect(value); updateoriginal_title(value.title); } } filmai={users} tabIndex="0"> {/*updateoriginal_title(value.title);-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
                        <h3>{value.title} </h3>
                        <p>{value.vote_average} Rating, { value.release_date.substring(0,4)}</p>
                     </li>
@@ -164,3 +165,4 @@ po   "scripts": {
 
   einam i github puslapi -> settings -> pages ir jeigu matom kad branch:gh-pages vadinasi viskas gerai, kopinam nuoroda ir isimetam i Settings
 */
+/*https://www.youtube.com/watch?v=vXO5JMiKtM8&ab_channel=LessononCoding*/
