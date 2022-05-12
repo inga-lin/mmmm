@@ -71,7 +71,7 @@ const updateoriginal_title = title => {
             <div className="search">
                 <div className="searchInputs">
                   {/*setInputText(e.target.value);-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
-                   <input type="text" style={{ color:'white'}} placeholder="              filmu paieska" value={inputText} onChange={(e) => {handeleImputChange(e); setInputText(e.target.value);}}> 
+                   <input type="text" style={{ color:'white'}} placeholder="Search..." value={inputText} onChange={(e) => {handeleImputChange(e); setInputText(e.target.value);}}> 
                    </input>
                    <img className="movie" style={{ width: "45px", height: "45px", color:'red' }} src={movie} alt="movie"></img>
                    <div className="searchIcon">

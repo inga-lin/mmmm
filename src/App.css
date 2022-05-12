@@ -103,16 +103,29 @@ align-self: center;
 
 .search input {
   background-color: #e41d27;
-  /*border: solid 20px #491db8;*/
   color: #f5f5f1;
   font-size: 20px;
-  /*padding: 15px 15px 15px 90px;*/
-  padding: 15px 0px 15px 0px;
+  padding: 15px 0px 15px 80px;
   height: 30px;
-  width: 90%;
+  width: 85%;
   border: 1px solid #d9484e;
   margin-left: 0px;
-  
+  /**/
+}
+
+
+
+.dataResult {
+  margin-top: -20px;
+  margin-left: 4.5%;
+  width: 91%;
+  height: auto;
+  background-color: #f5f5f1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: absolute;
+  top: 114px;
+  cursor: pointer;
+  /**/
 }
 
 input {
@@ -141,20 +154,6 @@ input:focus {
   outline: none;
 }
 
-.dataResult {
-
-  
-  margin-top: -20px;
-  margin-left: 5%;
-
-  width: 90%;
-  height: auto;
-  background-color: #f5f5f1;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  position: absolute;
-  top: 114px;
-  cursor: pointer;
-}
 
 
 .dataResult .dataItem {
@@ -190,10 +189,7 @@ a {
   cursor: pointer;
 }
 
-h2{
-  color: #61dafb;
-  background-color: #cbf20a;
-}
+
 @media (max-width: 850px) {
   .filmuTevas{
     display: flex;
@@ -236,6 +232,7 @@ h2{
     margin-top: 0px;
     text-align: left;
   }
+
 }
 
 @media (max-width: 400px) {
@@ -244,7 +241,10 @@ h2{
     font-size: 15px;
 
   }
-
+  .search input {
+    width: 280px;
+    padding: 15px 0px 15px 60px;
+  }
   .dataItem {
     padding-top: 10px;
     padding-bottom: 10px;
