@@ -11,6 +11,8 @@ function Filmai(){
     const [users, setUsers] = useState([]);//movielist-filmai
     const [inputText, setInputText] = useState('');
     const [clickMove, setClickMove] = useState();//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu
+    //const [search, setSearch] = useState("");
+    const [display, setDisplay] = useState(false);
     
 
     useEffect(() => {
@@ -27,7 +29,8 @@ function Filmai(){
 
   const handeleImputChange = (e) => {
     const searchWord = e.target.value;
-    setInputText(searchWord)
+    setInputText(searchWord);
+    setDisplay(false);
   //console.log(setInputText);
 
     const newFilter = users.filter((value) => {
@@ -54,6 +57,11 @@ function Filmai(){
     setUsers([]);
     setInputText("");
 };
+
+const updateoriginal_title = title => {
+  setInputText(title);//setInputText//setSearch
+  setDisplay(false);///
+};
 ///////
 ////
 
@@ -62,7 +70,7 @@ function Filmai(){
         <>
             <div className="search">
                 <div className="searchInputs">
-                   <input type="text" style={{ color:'white'}} placeholder="              filmu paieska" value={inputText} onChange={(e) => handeleImputChange(e)}>
+                   <input type="text" style={{ color:'white'}} placeholder="              filmu paieska" value={inputText} onChange={(e) => {handeleImputChange(e); setInputText(e.target.value);}}> 
                    </input>
                    <img className="movie" style={{ width: "45px", height: "45px", color:'red' }} src={movie} alt="movie"></img>
                    <div className="searchIcon">
@@ -74,7 +82,7 @@ function Filmai(){
                 {users.slice(0, 8).map((value) => {
                     return (
                     <div className="dataItem2" >
-                    <li className="dataItem" onClick={() => heandelSelect(value) } filmai={users}>
+                    <li className="dataItem" onClick={() => {heandelSelect(value); updateoriginal_title(value.title); } } filmai={users}>
                        <h3>{value.title} </h3>
                        <p>{value.vote_average} Rating, { value.release_date.substring(0,4)}</p>
                     </li>
