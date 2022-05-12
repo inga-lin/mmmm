@@ -25,33 +25,34 @@ function Filmai(){
       }
     },[inputText]);
 
-   const handeleImputChange = (e) => {
+  const handeleImputChange = (e) => {
     const searchWord = e.target.value;
-       setInputText(searchWord)
-      //console.log(setInputText);
+    setInputText(searchWord)
+  //console.log(setInputText);
 
-  const newFilter = users.filter((value) => {
+    const newFilter = users.filter((value) => {
     return value.title.toLowerCase().includes(searchWord.toLowerCase());
-  });
-  //jeigu istrinsim jieskoma zodi uzsidarys lentele
-  if (searchWord === "") {
-    setUsers([]);
-  } else {
-    setUsers(newFilter);
+    });
+    //jeigu istrinsim jieskoma zodi uzsidarys lentele
+    if (searchWord === "") {
+      setUsers([]);
+    } else {
+      setUsers(newFilter);
+    }
+  };
+
+
+  //cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu
+  const heandelSelect = (value) => {
+    setClickMove(value)
+    setUsers([]); //per sita ir ? su : (" ") returne padarysim kad paspaudus ant filmo uzsidarytu filmu pasirinkimas (users.length)
+    setInputText([]) //paspaudus cia isnyksta rasytas kliento pavadinimas 
   }
-};
 
-
-//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu
-const heandelSelect = (value) => {
-  setClickMove(value)
-  setUsers([]); //per sita ir ? su : (" ") returne padarysim kad paspaudus ant filmo uzsidarytu filmu pasirinkimas (users.length)
-}
-
-//cia apsirasom kad kai parasom filmo pradzios zodzius searche galima nutu su x uzdaryti paieskos pasirinkimus
-const clearInput = () => {
-  setUsers([]);
-  setInputText("");
+  //cia apsirasom kad kai parasom filmo pradzios zodzius searche galima butu su x uzdaryti paieskos pasirinkimus
+  const clearInput = () => {
+    setUsers([]);
+    setInputText("");
 };
 ///////
 ////
@@ -75,13 +76,13 @@ const clearInput = () => {
                     <div className="dataItem2" >
                     <li className="dataItem" onClick={() => heandelSelect(value) } filmai={users}>
                        <h3>{value.title} </h3>
-                       <p>{value.vote_average} Rating, {value.release_date.substring(0,4)}</p>
+                       <p>{value.vote_average} Rating, { value.release_date.substring(0,4)}</p>
                     </li>
                     </div>
                     );
                      })}
                 </div>
-                ) : (" ")}
+                ) : ('')}
                 {/*//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu*/}
                {clickMove && <MovieList className="MovieList" filmas={clickMove}></MovieList> }
             </div> 
@@ -91,7 +92,11 @@ const clearInput = () => {
 
 export default Filmai;
 
-/*{clickMove.original_title}*/
+/*{clickMove.original_title}
+<h2>{clickMove.original_title} </h2>
+            ) : (" ")}
+                            ) : (<h1>{users.original_title}</h1>)}
+                            */
 
 /*{clickMove && <MovieList className="MovieList" filmas={clickMove}></MovieList>}*/
 

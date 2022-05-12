@@ -190,9 +190,9 @@ a {
   cursor: pointer;
 }
 
-.movie {
-  color: rgb(25, 0, 255);
-  background-color: #61dafb;
+h2{
+  color: #61dafb;
+  background-color: #cbf20a;
 }
 @media (max-width: 850px) {
   .filmuTevas{
