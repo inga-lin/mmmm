@@ -36,7 +36,7 @@ function Filmai(){
     return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
     //jeigu istrinsim jieskoma zodi uzsidarys lentele
-    if (searchWord === "") {
+    if (searchWord === "" ) {
       setUsers([]);
     } else {
       setUsers(newFilter);
@@ -55,11 +55,13 @@ function Filmai(){
   const clearInput = () => {
     setUsers([]);
     setInputText("");
+    clickMove('');
 };
 
 // {/*updateoriginal_title-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
 const updateoriginal_title = title => {
   setInputText(title);//setInputText//setSearch
+  setUsers([]);
   //setDisplay(false);///
 };
 ///////
@@ -71,7 +73,7 @@ const updateoriginal_title = title => {
             <div className="search">
                 <div className="searchInputs">
                   {/*setInputText(e.target.value);-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
-                   <input type="text" style={{ color:'white'}} placeholder="Search..." value={inputText} onChange={(e) => {handeleImputChange(e); setInputText(e.target.value);  }}> 
+                   <input type="text" style={{ color:'white'}} placeholder="Search..." value={ clickMove.title ? clickMove.title : inputText} onChange={(e) => {handeleImputChange(e); setInputText(e.target.value);  }}> 
                    </input>
                    <img className="movie" style={{ width: "45px", height: "45px", color:'red' }} src={movie} alt="movie"></img>
                    <div className="searchIcon">
@@ -83,7 +85,7 @@ const updateoriginal_title = title => {
                 {users.slice(0, 8).map((value) => {
                     return (
                     <div className="dataItem2" >
-                    <li className="dataItem" onClick={() => {heandelSelect(value); updateoriginal_title(value.title); } } filmai={users} tabIndex="0"> {/*updateoriginal_title(value.title);-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
+                    <li className="dataItem" onClick={() => {heandelSelect(value); } } filmai={users} tabIndex="0"> {/*updateoriginal_title(value.title);-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
                        <h3>{value.title} </h3>
                        <p>{value.vote_average} Rating, { value.release_date.substring(0,4)}</p>
                     </li>
