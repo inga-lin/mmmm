@@ -12,7 +12,7 @@ function Filmai(){
     const [inputText, setInputText] = useState('');
     const [clickMove, setClickMove] = useState('');//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu//const [search, setSearch] = useState("");
     
-    //const [display, setDisplay] = useState(false);
+    //const [display, setDisplay] = useState([]);
     
 
     useEffect(() => {
@@ -46,9 +46,9 @@ function Filmai(){
 
   //cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu
   const heandelSelect = (value) => {
-    setClickMove(value)
+    setClickMove(value);
     setUsers([]); //per sita ir ? su : (" ") returne padarysim kad paspaudus ant filmo uzsidarytu filmu pasirinkimas (users.length)
-    setInputText([]) //paspaudus cia isnyksta rasytas kliento pavadinimas 
+    setInputText([]); //paspaudus cia isnyksta rasytas kliento pavadinimas 
   }
 
   //cia apsirasom kad kai parasom filmo pradzios zodzius searche galima butu su x uzdaryti paieskos pasirinkimus
