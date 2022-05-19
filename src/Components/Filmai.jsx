@@ -11,8 +11,7 @@ function Filmai(){
     const [users, setUsers] = useState([]);//movielist-filmai
     const [inputText, setInputText] = useState('');
     const [clickMove, setClickMove] = useState('');//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu//const [search, setSearch] = useState("");
-    
-    //const [display, setDisplay] = useState([]);
+    const [movieTitle, setMovieTitle] = useState('');//4.per cia padarysim kad parasius filma ji butu galima istrinti
     
 
     useEffect(() => {
@@ -49,21 +48,23 @@ function Filmai(){
     setClickMove(value);
     setUsers([]); //per sita ir ? su : (" ") returne padarysim kad paspaudus ant filmo uzsidarytu filmu pasirinkimas (users.length)
     setInputText([]); //paspaudus cia isnyksta rasytas kliento pavadinimas 
+    setMovieTitle(value.title);//4.per cia padarysim kad parasius filma ji butu galima istrinti
   }
 
   //cia apsirasom kad kai parasom filmo pradzios zodzius searche galima butu su x uzdaryti paieskos pasirinkimus
   const clearInput = () => {
-    setUsers([]);
+    //setUsers([]);
+    setMovieTitle('');//4.per cia padarysim kad parasius filma ji butu galima istrinti
     setInputText("");
-    clickMove('');
+    //clickMove('');
 };
 
 // {/*updateoriginal_title-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
-const updateoriginal_title = title => {
-  setInputText(title);//setInputText//setSearch
-  setUsers([]);
+//const updateoriginal_title = title => {
+ // setInputText(title);//setInputText//setSearch
+  //setUsers([]);
   //setDisplay(false);///
-};
+//};
 ///////
 ////
 
@@ -73,7 +74,7 @@ const updateoriginal_title = title => {
             <div className="search">
                 <div className="searchInputs">
                   {/*setInputText(e.target.value);-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
-                   <input type="text" style={{ color:'white'}} placeholder="Search..." value={ clickMove.title ? clickMove.title : inputText} onChange={(e) => {handeleImputChange(e); setInputText(e.target.value);  }}> 
+                   <input type="text" style={{ color:'white'}} placeholder="Search..." value={ movieTitle ? movieTitle : inputText} onChange={(e) => {handeleImputChange(e); setInputText(e.target.value);  }}> 
                    </input>
                    <img className="movie" style={{ width: "45px", height: "45px", color:'red' }} src={movie} alt="movie"></img>
                    <div className="searchIcon">
