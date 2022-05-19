@@ -27,7 +27,7 @@ function Filmai(){
   const handeleImputChange = (e) => {
     const searchWord = e.target.value;
     setInputText(searchWord);
-    setMovieTitle('')
+    setMovieTitle(''); //per cia issitrina su backspase uzrasas inpute
   //console.log(setInputText);
 
     const newFilter = users.filter((value) => {
