@@ -27,6 +27,7 @@ function Filmai(){
   const handeleImputChange = (e) => {
     const searchWord = e.target.value;
     setInputText(searchWord);
+    setMovieTitle('')
   //console.log(setInputText);
 
     const newFilter = users.filter((value) => {
