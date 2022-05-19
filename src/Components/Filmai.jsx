@@ -7,13 +7,11 @@ import MovieList from "./MovieList";
 
 function Filmai(){
 
-
     const [users, setUsers] = useState([]);//movielist-filmai
     const [inputText, setInputText] = useState('');
     const [clickMove, setClickMove] = useState('');//cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu//const [search, setSearch] = useState("");
     const [movieTitle, setMovieTitle] = useState('');//4.per cia padarysim kad parasius filma ji butu galima istrinti
     
-
     useEffect(() => {
       if (inputText.length > 1  ) { //nuo 3raidziu prades rodyti filma
         //per cia gaunam info apie filmus
@@ -42,7 +40,6 @@ function Filmai(){
     }
   };
 
-
   //cia apsirasom kad kai paspaudziam filma ji viena atvaizduotu
   const heandelSelect = (value) => {
     setClickMove(value);
@@ -57,16 +54,7 @@ function Filmai(){
     setMovieTitle('');//4.per cia padarysim kad parasius filma ji butu galima istrinti
     setInputText("");
     //clickMove('');
-};
-
-// {/*updateoriginal_title-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
-//const updateoriginal_title = title => {
- // setInputText(title);//setInputText//setSearch
-  //setUsers([]);
-  //setDisplay(false);///
-//};
-///////
-////
+  };
 
     return (
 
@@ -103,6 +91,15 @@ function Filmai(){
 }
 
 export default Filmai;
+
+// {/*updateoriginal_title-cia padarom kad search irasius keleta raidziu ir paspaudus ant norimo pavadinimo searche atsivaizduotu tas pavadinimas*/}
+//const updateoriginal_title = title => {
+ // setInputText(title);//setInputText//setSearch
+  //setUsers([]);
+  //setDisplay(false);///
+//};
+///////
+////
 
 /*{clickMove.original_title}
 <h2>{clickMove.original_title} </h2>
